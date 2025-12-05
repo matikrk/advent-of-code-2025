@@ -25,14 +25,14 @@ import (
 // The dial starts by pointing at 50.
 // You could follow the instructions, but your recent required official North Pole secret entrance security training seminar taught you that the safe is actually a decoy. The actual password is the number of times the dial is left pointing at 0 after any rotation in the sequence.
 
-func Day1(input string) string {
+func Run(input string) string {
 	fmt.Println("This is Day 1 solution placeholder.")
 	rawLines := strings.Split(input, "\n")
 	fmt.Printf("lines: %d\n", len(rawLines))
 
-	lines := make([]Day1Line, 0, len(rawLines))
+	lines := make([]Line, 0, len(rawLines))
 	for _, rawLine := range rawLines {
-		line, err := parseDay1Line(rawLine)
+		line, err := newLine(rawLine)
 		if err != nil {
 			log.Fatal("parsing line failed:", err)
 		}
@@ -62,30 +62,30 @@ func Day1(input string) string {
 	return strconv.Itoa(zeroCount)
 }
 
-type Day1Line struct {
+type Line struct {
 	Counterwise bool
 	Distance    int
 }
 
-func parseDay1Line(line string) (Day1Line, error) {
+func newLine(line string) (Line, error) {
 	var err error
-	var d Day1Line
+	var d Line
 	if line[0] == 'L' {
 		d.Counterwise = true
 	}
 	// fmt.Sscanf(line[1:], "%d", &d.Distance) // nice way but make it more direct
 	d.Distance, err = strconv.Atoi(line[1:])
 	if err != nil {
-		return Day1Line{}, err
+		return Line{}, err
 	}
 
 	return d, nil
 }
 
-//go:embed input1.txt
-var input1 string
+//go:embed input.txt
+var input string
 
-func Day1Empeded() {
-	result := Day1(input1)
+func RunEmbeded() {
+	result := Run(input)
 	fmt.Println("Day 1 embedded result:", result)
 }
