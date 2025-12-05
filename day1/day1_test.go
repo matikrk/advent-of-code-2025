@@ -1,10 +1,10 @@
-package day_test
+package day1_test
 
 import (
 	"testing"
 
 	"github.com/alecthomas/assert/v2"
-	"github.com/matikrk/advent-of-code-2025/day"
+	"github.com/matikrk/advent-of-code-2025/day1"
 )
 
 func TestDay1_sample(t *testing.T) {
@@ -19,7 +19,7 @@ L99
 R14
 L82`
 
-	result := day.Day1(input)
+	result := day1.Day1(input)
 	assert.Equal(t, "3", result)
 
 }
