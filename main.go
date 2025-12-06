@@ -5,6 +5,7 @@ import (
 
 	"github.com/matikrk/advent-of-code-2025/days/day1"
 	"github.com/matikrk/advent-of-code-2025/days/day2"
+	"github.com/matikrk/advent-of-code-2025/days/day3"
 )
 
 func main() {
@@ -15,4 +16,5 @@ func main() {
 
 	day1.RunEmbeded()
 	day2.RunEmbeded()
+	day3.RunEmbeded()
 }
