@@ -26,7 +26,7 @@ import (
 // You could follow the instructions, but your recent required official North Pole secret entrance security training seminar taught you that the safe is actually a decoy. The actual password is the number of times the dial is left pointing at 0 after any rotation in the sequence.
 
 func Run(input string) string {
-	fmt.Println("This is Day 1 solution placeholder.")
+	fmt.Println("This is Day 1 solution.")
 	rawLines := strings.Split(input, "\n")
 	fmt.Printf("lines: %d\n", len(rawLines))
 

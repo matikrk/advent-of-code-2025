@@ -48,7 +48,7 @@ import (
 // Consider your complete diagram of the paper roll locations. How many rolls of paper can be accessed by a forklift?
 
 func Run(input string) string {
-	fmt.Println("This is Day 4 solution placeholder.")
+	fmt.Println("This is Day 4 solution.")
 	raw := strings.Split(input, "\n")
 
 	sum := 0

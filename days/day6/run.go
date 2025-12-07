@@ -44,7 +44,7 @@ const (
 )
 
 func Run(input string) string {
-	fmt.Println("This is Day 6 solution placeholder.")
+	fmt.Println("This is Day 6 solution.")
 	raw := strings.Split(input, "\n")
 
 	var results []int

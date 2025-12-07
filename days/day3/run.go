@@ -35,7 +35,7 @@ import (
 
 // There are many batteries in front of you. Find the maximum joltage possible from each bank; what is the total output joltage?
 func Run(input string) string {
-	fmt.Println("This is Day 2 solution placeholder.")
+	fmt.Println("This is Day 2 solution.")
 	raw := strings.Split(input, "\n")
 
 	sum := 0

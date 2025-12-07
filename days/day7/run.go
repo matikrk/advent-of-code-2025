@@ -31,7 +31,7 @@ const (
 )
 
 func Run(input string) string {
-	fmt.Println("This is day7 solution placeholder.")
+	fmt.Println("This is day7 solution.")
 	raw := strings.Split(input, "\n")
 
 	usedSpliters := 0
@@ -49,10 +49,10 @@ func Run(input string) string {
 			case Start:
 				newRow[i] = Beam
 			case Empty:
-				if newRow[i] != Beam {
-					newRow[i] = results[i]
-				} else {
+				if newRow[i] == Beam { // when we have overwrite from prev splitter
 					newRow[i] = Beam
+				} else {
+					newRow[i] = results[i]
 				}
 			case Splitter:
 				if results[i] == Beam {
@@ -63,13 +63,11 @@ func Run(input string) string {
 				} else {
 					newRow[i] = Empty
 				}
-			case Beam:
-				newRow[i] = Beam
+				// case Beam: // we should not have beam in input
+				// 	newRow[i] = Beam
 			}
 		}
-		copy(results, newRow)
-		//
-		// results = newRow
+		results = newRow
 		fmt.Println("yo", string(results), usedSpliters)
 	}
 

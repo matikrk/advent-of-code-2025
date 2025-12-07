@@ -44,7 +44,7 @@ import (
 // Process the database file from the new inventory management system. How many of the available ingredient IDs are fresh?
 
 func Run(input string) string {
-	fmt.Println("This is Day 5 solution placeholder.")
+	fmt.Println("This is Day 5 solution.")
 	raw := strings.Split(input, "\n\n")
 	rangesRaw := strings.Split(raw[0], "\n")
 	idsRaw := strings.Split(raw[1], "\n")
@@ -79,7 +79,7 @@ func Run(input string) string {
 
 // Optimized version with Range struct
 func Run2(input string) string {
-	fmt.Println("This is Day 5 solution placeholder.")
+	fmt.Println("This is Day 5 solution.")
 	raw := strings.Split(input, "\n\n")
 	rangesRaw := strings.Split(raw[0], "\n")
 	idsRaw := strings.Split(raw[1], "\n")

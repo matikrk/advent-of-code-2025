@@ -40,7 +40,7 @@ import (
 // The rest of the ranges contain no invalid IDs.
 // Adding up all the invalid IDs in this example produces 1227775554.
 func Run(input string) string {
-	fmt.Println("This is Day 2 solution placeholder.")
+	fmt.Println("This is Day 2 solution.")
 	rawRanges := strings.Split(input, ",")
 	ranges := make([]Range, 0, len(rawRanges))
 	for _, rawLine := range rawRanges {
