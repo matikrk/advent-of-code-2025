@@ -36,24 +36,41 @@ func Run(input string) string {
 
 	usedSpliters := 0
 	results := make([]Operation, len(raw[0]))
+	for i := range results {
+		results[i] = Empty
+	}
 	for _, r := range raw {
+		newRow := make([]Operation, len(results))
+		for i := range newRow {
+			newRow[i] = Empty
+		}
 		for i, e := range r {
 			switch Operation(e) {
 			case Start:
-				results[i] = Beam
+				newRow[i] = Beam
 			case Empty:
-				// results[i] = results[i]
+				if newRow[i] != Beam {
+					newRow[i] = results[i]
+				} else {
+					newRow[i] = Beam
+				}
 			case Splitter:
 				if results[i] == Beam {
 					usedSpliters++
-					results[i] = Empty
-					results[i-1] = Beam
-					results[i+1] = Beam // to powoduje blad za proste podejscie - powinienm zrobic nowa zmienna
+					newRow[i] = Empty
+					newRow[i-1] = Beam
+					newRow[i+1] = Beam
+				} else {
+					newRow[i] = Empty
 				}
-			case Beam: // not needed
-				results[i] = Beam
+			case Beam:
+				newRow[i] = Beam
 			}
 		}
+		copy(results, newRow)
+		//
+		// results = newRow
+		fmt.Println("yo", string(results), usedSpliters)
 	}
 
 	return strconv.Itoa(usedSpliters)
